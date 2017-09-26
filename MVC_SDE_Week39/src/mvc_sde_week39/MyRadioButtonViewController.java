@@ -46,6 +46,8 @@ public class MyRadioButtonViewController implements Initializable
             score = 1;
         }
         System.out.println("Score is " + score);
+        
+        ((Stage)button.getScene().getWindow()).close(); //This line will close the current window
     }
 
     @Override

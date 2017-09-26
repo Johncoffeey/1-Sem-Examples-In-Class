@@ -42,7 +42,7 @@ public class ADifferentViewController implements Initializable
     @FXML
     private void handleClickMeButton(ActionEvent event) throws IOException
     {
-        while (true)
+        for (int i = 0; i < 5; i++) //Change to "while(true)" to really mess with the user:
         {
             Parent root = FXMLLoader.load(getClass().getResource("MyRadioButtonView.fxml"));
 
