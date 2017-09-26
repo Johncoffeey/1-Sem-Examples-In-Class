@@ -11,8 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.stage.Stage;
 
 /**
  *
@@ -35,13 +35,13 @@ public class MyRadioButtonViewController implements Initializable
     private void handleButtonAction(ActionEvent event)
     {
         int score = 0;
-        if(rBtn.isSelected())
+        if (rBtn.isSelected())
         {
             score = -1;
-        } else if(rBtn2.isSelected())
+        } else if (rBtn2.isSelected())
         {
             score = 0;
-        } else if(rBtnX.isSelected())
+        } else if (rBtnX.isSelected())
         {
             score = 1;
         }
@@ -51,7 +51,7 @@ public class MyRadioButtonViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        
     }
 
 }

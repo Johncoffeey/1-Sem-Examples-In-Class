@@ -21,7 +21,7 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("MyRadioButtonView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ADifferentView.fxml"));
         
         Scene scene = new Scene(root);
         
