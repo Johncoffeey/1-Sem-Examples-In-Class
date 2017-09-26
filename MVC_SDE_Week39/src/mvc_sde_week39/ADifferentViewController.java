@@ -48,6 +48,7 @@ public class ADifferentViewController implements Initializable
 
             Scene scene = new Scene(root);
 
+            
             //Stage stage = (Stage) txtName.getScene().getWindow(); //Gets the current stage
             Stage stage = new Stage(); //Create new stage
 
