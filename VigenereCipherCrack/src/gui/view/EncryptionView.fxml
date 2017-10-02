@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.view.EncryptionViewController">
+    <center>
+        <TitledPane collapsible="false" maxHeight="1.7976931348623157E308" text="Encryption text" BorderPane.alignment="CENTER">
+            <content>
+                <TextArea fx:id="txtPayload" prefHeight="200.0" prefWidth="200.0" />
+            </content>
+        </TitledPane>
+    </center>
+    <right>
+        <TitledPane collapsible="false" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" text="Stored passwords">
+            <content>
+                <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308">
+                    <content>
+                        <ListView fx:id="listPasswords" prefWidth="200.0" />
+                    </content>
+                </ScrollPane>
+            </content>
+        </TitledPane>
+    </right>
+    <bottom>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                    <children>
+                        <TextField fx:id="txtKey" promptText="Enter encryption key..." />
+                        <Button mnemonicParsing="false" onAction="#handleEncrypt" style="-fx-background-color: GREEN;" text="Encrypty">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleDecrypt" style="-fx-background-color: RED;" text="Decrypt">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="200.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleSaveKey" text="Save key" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>
