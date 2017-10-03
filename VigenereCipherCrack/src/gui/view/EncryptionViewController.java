@@ -23,14 +23,14 @@ import javafx.scene.control.TextField;
  */
 public class EncryptionViewController implements Initializable
 {
-    
+
     @FXML
     private TextField txtKey;
     @FXML
     private TextArea txtPayload;
     @FXML
     private ListView<EncryptionKey> listPasswords;
-    
+
     private EncryptionModel model;
 
     /**
@@ -49,23 +49,32 @@ public class EncryptionViewController implements Initializable
     {
         listPasswords.setItems(model.getAllEncryptionKeys());
     }
-    
+
     @FXML
     private void handleEncrypt(ActionEvent event)
     {
-        //TODO Do this
+        String payload = txtPayload.getText().trim();
+        String key = txtKey.getText().trim();
+        String result = model.encrypt(payload, key);
+        txtPayload.clear();
+        txtPayload.setText(result);
     }
-    
+
     @FXML
     private void handleDecrypt(ActionEvent event)
     {
-        //TODO Do this
+        String payload = txtPayload.getText().trim();
+        String key = txtKey.getText().trim();
+        String result = model.decrypt(payload, key);
+        txtPayload.clear();
+        txtPayload.setText(result);
     }
-    
+
     @FXML
     private void handleSaveKey(ActionEvent event)
     {
-        //TODO Do this
+        String key = txtKey.getText().trim();
+        model.addPassword(key);
     }
-    
+
 }
