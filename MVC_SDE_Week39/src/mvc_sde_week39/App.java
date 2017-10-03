@@ -21,7 +21,11 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("ADifferentView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ADifferentView.fxml"));
+        Parent root = loader.load();
+        ADifferentViewController controller = loader.getController();
+        
+        controller.getScores();
         
         Scene scene = new Scene(root);
         

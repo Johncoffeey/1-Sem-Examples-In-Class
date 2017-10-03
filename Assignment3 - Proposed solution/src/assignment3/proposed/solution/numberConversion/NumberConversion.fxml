@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="assignment3.proposed.solution.numberConversion.NumberConversionController">
+   <children>
+      <Label fx:id="label" layoutX="283.0" layoutY="107.0" text="Label" />
+      <TextField fx:id="txtNumberInput" layoutX="207.0" layoutY="65.0" />
+      <Button fx:id="btnKmToMiles" layoutX="207.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleButtonConversion" text="Km to miles" />
+      <Button fx:id="btnMilesToKm" layoutX="318.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleButtonConversion" text="Miles to km" />
+   </children>
+</AnchorPane>

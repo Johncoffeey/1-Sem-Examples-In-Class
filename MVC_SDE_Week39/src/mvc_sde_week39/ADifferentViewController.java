@@ -62,4 +62,9 @@ public class ADifferentViewController implements Initializable
         }
     }
 
+    public void getScores()
+    {
+        
+    }
+
 }
