@@ -30,7 +30,7 @@ public class VigenereCipherEncrypter
     }
 
     /**
-     * Populates the passwordlist using the top 10 most commen passwords.
+     * Populates the list of stored passwords, using the top 10 most common passwords.
      */
     private void populatePasswords()
     {

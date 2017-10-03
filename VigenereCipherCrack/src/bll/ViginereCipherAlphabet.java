@@ -12,10 +12,14 @@ package bll;
 public class ViginereCipherAlphabet
 {
 
-    private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!\"#¤%&/()=?,.;:-_´|`";
 
     public String getAlphabet()
     {
         return ALPHABET;
     }
+    
+    
+    
+    
 }

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.view.EncryptionViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EncryptionViewController">
     <center>
         <TitledPane collapsible="false" maxHeight="1.7976931348623157E308" text="Encryption text" BorderPane.alignment="CENTER">
             <content>
@@ -36,7 +36,7 @@
                 <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="txtKey" promptText="Enter encryption key..." />
-                        <Button mnemonicParsing="false" onAction="#handleEncrypt" style="-fx-background-color: GREEN;" text="Encrypty">
+                        <Button mnemonicParsing="false" onAction="#handleEncrypt" style="-fx-background-color: GREEN;" text="Encrypt">
                             <HBox.margin>
                                 <Insets left="5.0" />
                             </HBox.margin>
