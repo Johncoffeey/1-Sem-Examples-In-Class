@@ -6,6 +6,7 @@
 package gui.controller;
 
 import be.EncryptionKey;
+import bll.VigenereCipherEncrypter;
 import gui.model.EncryptionModel;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,7 +39,7 @@ public class EncryptionViewController implements Initializable
      */
     public EncryptionViewController()
     {
-        model = new EncryptionModel();
+        model = new EncryptionModel(new VigenereCipherEncrypter());
     }
 
     /**

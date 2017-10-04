@@ -6,6 +6,8 @@
 package gui.model;
 
 import be.EncryptionKey;
+import bll.IEncrypter;
+import bll.LeetSpeakEncrypter;
 import bll.PasswordStorage;
 import bll.VigenereCipherEncrypter;
 import javafx.collections.FXCollections;
@@ -18,16 +20,18 @@ import javafx.collections.ObservableList;
 public class EncryptionModel
 {
 
-    private VigenereCipherEncrypter encrypterLogic;
+    private IEncrypter encrypterLogic;
     private PasswordStorage pwStorage;
     private final ObservableList<EncryptionKey> allKeys;
 
     /**
      * Constructs an EncryptionModel
+     *
+     * @param encrypter
      */
-    public EncryptionModel()
+    public EncryptionModel(IEncrypter encrypter)
     {
-        this.encrypterLogic = new VigenereCipherEncrypter();
+        this.encrypterLogic = encrypter;
         pwStorage = new PasswordStorage();
         allKeys = FXCollections.observableArrayList(pwStorage.getEncryptionKeys());
     }
