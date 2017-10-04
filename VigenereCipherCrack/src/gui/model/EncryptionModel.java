@@ -6,6 +6,7 @@
 package gui.model;
 
 import be.EncryptionKey;
+import bll.PasswordStorage;
 import bll.VigenereCipherEncrypter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,12 +19,17 @@ public class EncryptionModel
 {
 
     private VigenereCipherEncrypter encrypterLogic;
+    private PasswordStorage pwStorage;
     private final ObservableList<EncryptionKey> allKeys;
 
+    /**
+     * Constructs an EncryptionModel
+     */
     public EncryptionModel()
     {
         this.encrypterLogic = new VigenereCipherEncrypter();
-        allKeys = FXCollections.observableArrayList(encrypterLogic.getEncryptionKeys());
+        pwStorage = new PasswordStorage();
+        allKeys = FXCollections.observableArrayList(pwStorage.getEncryptionKeys());
     }
 
     public ObservableList<EncryptionKey> getAllEncryptionKeys()
@@ -45,7 +51,7 @@ public class EncryptionModel
     {
         EncryptionKey key = new EncryptionKey(password);
         allKeys.add(key);
-        encrypterLogic.storeEncryptionKey(key);
+        pwStorage.storeEncryptionKey(key);
     }
 
 }

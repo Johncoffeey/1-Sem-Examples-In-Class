@@ -5,70 +5,14 @@
  */
 package bll;
 
-import be.EncryptionKey;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author stegg_000
  */
-public class VigenereCipherEncrypter
+public class VigenereCipherEncrypter implements IEncrypter
 {
 
-    private ViginereCipherAlphabet alphabet;
-    private List<String> storedPasswords;
-
-    /**
-     * Constructs a new VigenereCipherEncrypter object
-     */
-    public VigenereCipherEncrypter()
-    {
-        alphabet = new ViginereCipherAlphabet();
-        storedPasswords = new ArrayList<>();
-        populatePasswords();
-    }
-
-    /**
-     * Populates the list of stored passwords, using the top 10 most common passwords.
-     */
-    private void populatePasswords()
-    {
-        storedPasswords.add("password");
-        storedPasswords.add("football");
-        storedPasswords.add("qwerty");
-        storedPasswords.add("princess");
-        storedPasswords.add("login");
-        storedPasswords.add("welcome");
-        storedPasswords.add("solo");
-        storedPasswords.add("admin");
-        storedPasswords.add("flower");
-    }
-
-    /**
-     * Gets the list of stored encryption keys.
-     *
-     * @return
-     */
-    public List<EncryptionKey> getEncryptionKeys()
-    {
-        List<EncryptionKey> all = new ArrayList<>();
-        for (String pass : storedPasswords)
-        {
-            all.add(new EncryptionKey(pass));
-        }
-        return all;
-    }
-
-    /**
-     * Stores a new encryptionkey in the list of passwords.
-     *
-     * @param key
-     */
-    public void storeEncryptionKey(EncryptionKey key)
-    {
-        storedPasswords.add(key.getEncryptionKey());
-    }
+    private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!\"#¤%&/()=?,.;:-_´|`";
 
     /**
      * Encodes the given text using the given key.
@@ -77,6 +21,7 @@ public class VigenereCipherEncrypter
      * @param key
      * @return
      */
+    @Override
     public String encode(String clearText, String key)
     {
         return crypto(clearText, key, true);
@@ -89,6 +34,7 @@ public class VigenereCipherEncrypter
      * @param key
      * @return
      */
+    @Override
     public String decode(String encryptedText, String key)
     {
         return crypto(encryptedText, key, false);
@@ -98,7 +44,7 @@ public class VigenereCipherEncrypter
      * The encryption algorithm. En- or decrypts the text using the key.
      *
      * @param payload The text to en or decrypt.
-     * @param key The key.
+     * @param key     The key.
      * @param encrypt To encrypt or not to encrypt? That is the question!
      * @return
      */
@@ -112,11 +58,11 @@ public class VigenereCipherEncrypter
         {
             char k = key.charAt(keyIndex);
             char v = payload.charAt(i);
-            int ki = alphabet.getAlphabet().indexOf(k);
-            int vi = alphabet.getAlphabet().indexOf(v);
+            int ki = ALPHABET.indexOf(k);
+            int vi = ALPHABET.indexOf(v);
             int ti = encrypt ? (vi + ki) : (vi - ki);
-            ti = (ti + alphabet.getAlphabet().length()) % alphabet.getAlphabet().length();
-            char target = alphabet.getAlphabet().charAt(ti);
+            ti = (ti + ALPHABET.length()) % ALPHABET.length();
+            char target = ALPHABET.charAt(ti);
             sb.append(target);
             keyIndex = ++keyIndex % key.length();
         }
