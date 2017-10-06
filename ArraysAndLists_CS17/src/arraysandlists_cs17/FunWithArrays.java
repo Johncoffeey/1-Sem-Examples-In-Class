@@ -6,6 +6,8 @@
 package arraysandlists_cs17;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  *
@@ -20,6 +22,49 @@ public class FunWithArrays
     {
 
     }
+    
+    public void binarySearch()
+    {
+        int[] numbers = new int[100000000];
+        for (int i = 0; i < numbers.length; i++)
+        {
+            numbers[i] = i;
+        }
+        
+        Arrays.sort(numbers);
+        
+        int value = 42;
+        
+        int idx = Arrays.binarySearch(numbers, value);
+        
+        System.out.println("42 at " + idx);
+        
+        
+        
+        
+    }
+
+    public void linearSearchingInArrays()
+    {
+        int[] numbers = new int[100000000];
+        for (int i = 0; i < numbers.length; i++)
+        {
+            numbers[i] = numbers.length - (i + 1);
+        }
+        
+        int indexOf9000 = -1;
+        int value = 1;
+        for(int j = 0; j<numbers.length; j++)
+        {
+            if(numbers[j] == value)
+            {
+                indexOf9000 = j;
+                break;
+            }
+        }
+        
+        System.out.println("Value found at " + indexOf9000);
+    }
 
     public void arrayListFun()
     {
@@ -33,14 +78,14 @@ public class FunWithArrays
 
         length = moreNames.size();
         System.out.println("Elements in moreNames = " + length);
-        
+
         for (String moreName : moreNames)
         {
             System.out.println("A name " + moreName);
-            System.out.println("Characters in name " 
+            System.out.println("Characters in name "
                     + moreName + " is " + moreName.trim().length());
         }
-        
+
     }
 
     public void arrayFun()

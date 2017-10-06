@@ -19,9 +19,10 @@ public class ArraysAndLists_CS17
     {
         FunWithArrays fwa = new FunWithArrays();
 
-        fwa.arrayFun();
-        fwa.arrayListFun();
-
+//        fwa.arrayFun();
+//        fwa.arrayListFun();
+//        fwa.linearSearchingInArrays();
+        fwa.binarySearch();
     }
 
 }
