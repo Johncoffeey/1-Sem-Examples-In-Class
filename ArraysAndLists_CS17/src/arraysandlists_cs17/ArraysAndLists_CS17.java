@@ -23,8 +23,8 @@ public class ArraysAndLists_CS17
 //        fwa.arrayListFun();
 //        fwa.linearSearchingInArrays();
 //        fwa.binarySearch();
-
-            fwa.intInArrayLists();
+//            fwa.intInArrayLists();
+        fwa.denEneTingIMangler();
 
     }
 

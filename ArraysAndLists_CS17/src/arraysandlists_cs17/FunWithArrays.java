@@ -25,14 +25,28 @@ public class FunWithArrays
 
     }
 
+    public void denEneTingIMangler()
+    {
+        int x = 3;
+        int y = 3;
+        int[][] multidimensionalArray = new int[y][x];
+
+        multidimensionalArray[0][0] = 5;
+
+        int five = multidimensionalArray[0][0];
+
+        System.out.println("Five = " + five);
+
+    }
+
     public void funWithLists()
     {
         List<String> listOFStrings = null;
-        
+
         listOFStrings = new LinkedList<>();
-        
+
         listOFStrings.add("Hej");
-        
+
     }
 
     public void intInArrayLists()
