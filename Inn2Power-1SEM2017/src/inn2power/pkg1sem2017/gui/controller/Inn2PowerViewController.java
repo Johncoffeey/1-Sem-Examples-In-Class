@@ -5,9 +5,15 @@
  */
 package inn2power.pkg1sem2017.gui.controller;
 
+import inn2power.pkg1sem2017.be.Company;
+import inn2power.pkg1sem2017.be.Relation;
+import inn2power.pkg1sem2017.gui.model.Inn2PowerModel;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 
 /**
  * FXML Controller class
@@ -17,6 +23,22 @@ import javafx.fxml.Initializable;
 public class Inn2PowerViewController implements Initializable
 {
 
+    @FXML
+    private Label lblCompanyId;
+    @FXML
+    private Label lblCompanyName;
+    @FXML
+    private ListView<Company> listCompanies;
+    @FXML
+    private ListView<Relation> listRelations;
+
+    private Inn2PowerModel model;
+
+    public Inn2PowerViewController()
+    {
+        model = new Inn2PowerModel();
+    }
+
     /**
      * Initializes the controller class.
      */
@@ -24,6 +46,6 @@ public class Inn2PowerViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         // TODO
-    }    
-    
+    }
+
 }

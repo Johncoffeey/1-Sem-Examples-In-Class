@@ -22,7 +22,10 @@ public class ArraysAndLists_CS17
 //        fwa.arrayFun();
 //        fwa.arrayListFun();
 //        fwa.linearSearchingInArrays();
-        fwa.binarySearch();
+//        fwa.binarySearch();
+
+            fwa.intInArrayLists();
+
     }
 
 }

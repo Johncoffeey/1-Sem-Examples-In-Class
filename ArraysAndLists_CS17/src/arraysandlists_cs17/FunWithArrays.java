@@ -7,6 +7,8 @@ package arraysandlists_cs17;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -22,7 +24,31 @@ public class FunWithArrays
     {
 
     }
-    
+
+    public void funWithLists()
+    {
+        List<String> listOFStrings = null;
+        
+        listOFStrings = new LinkedList<>();
+        
+        listOFStrings.add("Hej");
+        
+    }
+
+    public void intInArrayLists()
+    {
+        ArrayList<Integer> listOfNumbers = new ArrayList<>();
+        listOfNumbers.add(5);
+        Integer intObj = new Integer(8);
+        listOfNumbers.add(intObj);
+        listOfNumbers.add(Integer.parseInt("13"));
+        for (Integer nr : listOfNumbers)
+        {
+            System.out.println(nr.toString());
+        }
+
+    }
+
     public void binarySearch()
     {
         int[] numbers = new int[100000000];
@@ -30,18 +56,15 @@ public class FunWithArrays
         {
             numbers[i] = i;
         }
-        
+
         Arrays.sort(numbers);
-        
+
         int value = 42;
-        
+
         int idx = Arrays.binarySearch(numbers, value);
-        
+
         System.out.println("42 at " + idx);
-        
-        
-        
-        
+
     }
 
     public void linearSearchingInArrays()
@@ -51,18 +74,18 @@ public class FunWithArrays
         {
             numbers[i] = numbers.length - (i + 1);
         }
-        
+
         int indexOf9000 = -1;
         int value = 1;
-        for(int j = 0; j<numbers.length; j++)
+        for (int j = 0; j < numbers.length; j++)
         {
-            if(numbers[j] == value)
+            if (numbers[j] == value)
             {
                 indexOf9000 = j;
                 break;
             }
         }
-        
+
         System.out.println("Value found at " + indexOf9000);
     }
 
