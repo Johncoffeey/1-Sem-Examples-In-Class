@@ -18,7 +18,8 @@ public class App
     public static void main(String[] args)
     {
         Mytester tester = new Mytester();
-        tester.test();
+//        tester.testPersons();
+        tester.testTeachers();
     }
 
 }
