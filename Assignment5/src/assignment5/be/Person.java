@@ -78,4 +78,17 @@ public class Person
         return id + " " + name + " " + email;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj instanceof Person)
+        {
+            Person p = (Person) obj;
+            return this.id == p.getId();
+        } else
+        {
+            return super.equals(obj);
+        }
+    }
+
 }

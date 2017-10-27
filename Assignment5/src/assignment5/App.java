@@ -20,7 +20,8 @@ public class App
         Mytester tester = new Mytester();
 //        tester.testPersons();
 //        tester.testTeachers();
-        tester.testStudents();
+//        tester.testStudents();
+        tester.testPersonManager();
     }
 
 }

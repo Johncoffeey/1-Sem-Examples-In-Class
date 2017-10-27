@@ -9,6 +9,7 @@ import assignment5.be.GradeInfo;
 import assignment5.be.Person;
 import assignment5.be.Student;
 import assignment5.be.Teacher;
+import assignment5.bll.PersonManager;
 import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,41 @@ import java.util.List;
  */
 public class Mytester
 {
+    
+    public void testPersonManager()
+    {
+        PersonManager pm = new PersonManager();
+        
+        Teacher t1 = new Teacher(1, "Peter", "PGN");
+        Teacher t2 = new Teacher(2, "Jeppe", "JLE");
+        
+        Student s1 = new Student(101, "Anders And", "DMU");
+        Student s2 = new Student(102, "Fætter Højben", "DMU");
+        Student s3 = new Student(103, "Fætter Guf", "DMU");
+        
+        pm.addPerson(t1);
+        pm.addPerson(t2);
+        pm.addPerson(s1);
+        pm.addPerson(s2);
+        pm.addPerson(s3);
+        
+        System.out.println("Person count: Actual=" + pm.getAllPersons().size() + ", expected=5");
+        System.out.println("Student count: Actual=" + pm.getAllStudents().size() + ", expected=3");
+        System.out.println("Teacher count: Actual=" + pm.getAllTeachers().size() + ", expected=2");
+        
+        Person p = pm.getPerson(1);
+        System.out.println("Person with id=1 is " + p.getName() + ", actual id=" + p.getId());
+        
+        Person pNull = pm.getPerson(3);
+        System.out.println("Person with id 3 is null?: " + pNull);
+        
+        Person pDobbelganger = new Teacher(1, "bØRGE", "NaN");
+        pm.addPerson(pDobbelganger);
+        System.out.println("Is size still 5? Size is " + pm.getAllPersons().size());
+        
+        pm.removePerson(101);
+        System.out.println("Remove test: P size = " + pm.getAllPersons().size() + "(4)");
+    }
     
     public void testStudents()
     {
