@@ -19,7 +19,8 @@ public class App
     {
         Mytester tester = new Mytester();
 //        tester.testPersons();
-        tester.testTeachers();
+//        tester.testTeachers();
+        tester.testStudents();
     }
 
 }
