@@ -105,15 +105,13 @@ public abstract class AbstractMenu
      */
     private void showMenu()
     {
-
-    }
-
-    /**
-     * Waits until the 'enter' key is pressed.
-     */
-    protected void pause()
-    {
-
+        clear();
+        System.out.println(header);
+        for (int i = 0; i < menuItems.length; i++)
+        {
+            System.out.println((i + 1) + ": " + menuItems[i]);
+        }
+        System.out.println(EXIT_OPTION + ": Exit");
     }
 
     /**
@@ -124,4 +122,9 @@ public abstract class AbstractMenu
 
     }
 
+    protected void pause()
+    {
+        
+    }
+    
 }

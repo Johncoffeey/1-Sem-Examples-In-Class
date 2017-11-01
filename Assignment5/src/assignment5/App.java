@@ -5,6 +5,8 @@
  */
 package assignment5;
 
+import assignment5.gui.MainMenu;
+
 /**
  *
  * @author pgn
@@ -17,11 +19,14 @@ public class App
      */
     public static void main(String[] args)
     {
-        Mytester tester = new Mytester();
+          new MainMenu().run();
+        
+        
+//        Mytester tester = new Mytester();
 //        tester.testPersons();
 //        tester.testTeachers();
 //        tester.testStudents();
-        tester.testPersonManager();
+//        tester.testPersonManager();
     }
 
 }
