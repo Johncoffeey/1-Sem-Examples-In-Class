@@ -82,23 +82,23 @@ public class Mytester
         }
     }
 
-    public void testPersons()
-    {
-        List<Person> persons = new ArrayList<>();
-        persons.add(new Person(1, "Peter"));
-        persons.add(new Person(2, "Ole"));
-        persons.add(new Person(3, "Jeppe")); //Inline addition of Person
-        Person p1 = new Person(4, "Stig");   //Using multiple lines to add a Person
-        persons.add(p1);
-        for (Person person : persons)
-        {
-            System.out.println(person.toString());
-        }
-    }
+//    public void testPersons()
+//    {
+//        List<Person> persons = new ArrayList<>();
+//        persons.add(new Person(1, "Peter"));
+//        persons.add(new Person(2, "Ole"));
+//        persons.add(new Person(3, "Jeppe")); //Inline addition of Person
+//        Person p1 = new Person(4, "Stig");   //Using multiple lines to add a Person
+//        persons.add(p1);
+//        for (Person person : persons)
+//        {
+//            System.out.println(person.toString());
+//        }
+//    }
 
     public void testTeachers()
     {
-        List<Person> teachers = new ArrayList<>();
+        List<Person> hest = new ArrayList<>();
 
         Teacher a = new Teacher(666, "Stig", "SSI");
         a.addSubject("ITO");
@@ -110,10 +110,10 @@ public class Mytester
         b.addSubject("Game Dev");
         b.addSubject("Life on the streets");
 
-        teachers.add(a);
-        teachers.add(b);
+        hest.add(a);
+        hest.add(b);
 
-        for (Person teacher : teachers)
+        for (Person teacher : hest)
         {
             System.out.println(teacher);
         }

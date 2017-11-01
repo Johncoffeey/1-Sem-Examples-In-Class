@@ -36,10 +36,6 @@ public class PersonManager
         }
         return null;
     }
-    
-    
-    
-    
 
     public void removePerson(int id)
     {
