@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="320.0" prefWidth="293.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="simplemvcapplication.gui.controller.FXMLDocumentController">
+    <children>
+        <Button layoutX="214.0" layoutY="14.0" onAction="#handleCompanySearch" text="Search" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <ListView fx:id="listCompanies" layoutX="14.0" layoutY="60.0" prefHeight="252.0" prefWidth="265.0" />
+      <TextField fx:id="txtSearch" layoutX="14.0" layoutY="14.0" promptText="Search for company" />
+    </children>
+</AnchorPane>
