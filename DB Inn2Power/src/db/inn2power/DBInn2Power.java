@@ -6,6 +6,7 @@
 package db.inn2power;
 
 import db.inn2power.dal.CompanyDAO;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import javafx.application.Application;
@@ -35,11 +36,21 @@ public class DBInn2Power extends Application
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException
+    public static void main(String[] args) throws SQLException, IOException
     {
         CompanyDAO companyDao = new CompanyDAO();
         
-        List<Company> allCompaniesEmpty = companyDao.getAllCompanies();
+        //SQL Injection Example ONE:
+        List<Company> allCompaniesEmpty = companyDao.getCompaniesInAnSqlInjectionInsecureWay("Ole' OR 'a'='a");
+        for (Company company : allCompaniesEmpty)
+        {
+            System.out.println(company);
+        }
+        
+        //SQL Injection Exammple TWO (Carefull here):
+        List<Company> allCompaniesEmptyTwo = companyDao.getCompaniesInAnSqlInjectionInsecureWay("Ole'; DELETE FROM Company WHERE 'a'='a");
+        
+        
         
         //launch(args);
     }

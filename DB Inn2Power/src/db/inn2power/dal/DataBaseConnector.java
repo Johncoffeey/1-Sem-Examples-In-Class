@@ -7,6 +7,7 @@ package db.inn2power.dal;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
+import java.io.IOException;
 import java.sql.Connection;
 
 /**
@@ -15,21 +16,23 @@ import java.sql.Connection;
  */
 public class DataBaseConnector
 {
+
     private SQLServerDataSource dataSource;
-    
-    public DataBaseConnector()
+
+    public DataBaseConnector() throws IOException
     {
         dataSource = new SQLServerDataSource();
+
         dataSource.setServerName("EASV-DB2");
         dataSource.setPortNumber(1433);
         dataSource.setDatabaseName("Inn2Power");
         dataSource.setUser("CS2017A_40");
         dataSource.setPassword("CS2017A_40");
     }
-    
+
     public Connection getConnection() throws SQLServerException
     {
         return dataSource.getConnection();
     }
-    
+
 }
