@@ -6,7 +6,7 @@
 package db.inn2power.dal;
 
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-import db.inn2power.Company;
+import db.inn2power.be.Company;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

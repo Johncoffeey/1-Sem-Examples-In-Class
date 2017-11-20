@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package db.inn2power;
+package db.inn2power.be;
 
 import java.io.Serializable;
 

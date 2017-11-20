@@ -5,6 +5,7 @@
  */
 package db.inn2power;
 
+import db.inn2power.be.Company;
 import db.inn2power.dal.CompanyDAO;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -48,7 +49,7 @@ public class DBInn2Power extends Application
         }
         
         //SQL Injection Exammple TWO (Carefull here):
-        List<Company> allCompaniesEmptyTwo = companyDao.getCompaniesInAnSqlInjectionInsecureWay("Ole'; DELETE FROM Company WHERE 'a'='a");
+//        List<Company> allCompaniesEmptyTwo = companyDao.getCompaniesInAnSqlInjectionInsecureWay("Ole'; DELETE FROM Company WHERE 'a'='a");
         
         
         
