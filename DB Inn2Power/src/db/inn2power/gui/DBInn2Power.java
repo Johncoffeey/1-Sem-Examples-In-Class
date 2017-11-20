@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package db.inn2power;
+package db.inn2power.gui;
 
 import db.inn2power.be.Company;
 import db.inn2power.dal.CompanyDAO;
@@ -22,14 +22,14 @@ import javafx.stage.Stage;
  */
 public class DBInn2Power extends Application
 {
-    
+
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
+        Parent root = FXMLLoader.load(getClass().getResource("view/FXMLDocument.fxml"));
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -39,21 +39,7 @@ public class DBInn2Power extends Application
      */
     public static void main(String[] args) throws SQLException, IOException
     {
-        CompanyDAO companyDao = new CompanyDAO();
-        
-        //SQL Injection Example ONE:
-        List<Company> allCompaniesEmpty = companyDao.getCompaniesInAnSqlInjectionInsecureWay("Ole' OR 'a'='a");
-        for (Company company : allCompaniesEmpty)
-        {
-            System.out.println(company);
-        }
-        
-        //SQL Injection Exammple TWO (Carefull here):
-//        List<Company> allCompaniesEmptyTwo = companyDao.getCompaniesInAnSqlInjectionInsecureWay("Ole'; DELETE FROM Company WHERE 'a'='a");
-        
-        
-        
-        //launch(args);
+        launch(args);
     }
-    
+
 }
