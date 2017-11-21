@@ -57,7 +57,7 @@ public class CompanyDAO
                 Company c = new Company(id, name, country, address, website, supplyChainCat, businessRole, lat, lng, isSME);
                 return c;
             }
-            throw new RuntimeException("Can't create company");
+            throw new RuntimeException("Can't create company"); //Throw a layer specific exception here...
         }
     }
 
